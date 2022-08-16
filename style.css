@@ -1,0 +1,12 @@
+.wrapper {
+    background-color: grey;
+    height: 100px;
+}
+
+.btn {
+    background-color: blue;
+}
+
+.btn-color {
+    background-color: azure;
+}
