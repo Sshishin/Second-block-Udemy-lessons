@@ -1,12 +1,18 @@
 .wrapper {
     background-color: grey;
     height: 100px;
+    position: relative;
 }
 
 .btn {
     background-color: blue;
+    position: absolute;
 }
 
 .btn-color {
     background-color: azure;
+}
+
+.box {
+    margin: 50px;
 }
