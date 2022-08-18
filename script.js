@@ -119,23 +119,85 @@
 // ПРОСТАЯ АНИМАЦИЯ ЧЕРЕЗ setInterval
 
 
-let box = document.querySelector('.box');       //Получаем элемент при клике на который будет вызываться функция анимации
+// let box = document.querySelector('.box');       //Получаем элемент при клике на который будет вызываться функция анимации
 
-function myAnimation() {
-    let elem = document.querySelector('.btn');      //Получаем элемент который будет анимирован
-    let pos = 0;        //Определяем счетчик для измерения позиции перемещаемого элемента
+// function myAnimation() {
+//     let elem = document.querySelector('.btn');      //Получаем элемент который будет анимирован
+//     let pos = 0;        //Определяем счетчик для измерения позиции перемещаемого элемента
 
-    const id = setInterval(frame, 10);      //Вызываем функцию через метод интервала где функция будет выполнятся каждую 0.01 секунду
+//     const id = setInterval(frame, 10);      //Вызываем функцию через метод интервала где функция будет выполнятся каждую 0.01 секунду
 
-function frame () {
-    if(pos == 200) {
-        clearInterval();
-    } else {
-        pos++;      //Считаем позицию
-        elem.style.left = pos + 'px';       //Добавляем свойство для элемента
-    }
-}
+// function frame () {
+//     if(pos == 200) {
+//         clearInterval();
+//     } else {
+//         pos++;      //Считаем позицию
+//         elem.style.left = pos + 'px';       //Добавляем свойство для элемента
+//     }
+// }
 
-}
+// }
 
-box.addEventListener('click', myAnimation);     //Вешаем на кнопку пуска обработчик событий
+// box.addEventListener('click', myAnimation);     //Вешаем на кнопку пуска обработчик событий
+
+
+
+
+// ************************* ДАТЫ *******************
+
+// const now = new Date();     //Создали текущую дату
+
+// console.log(now);
+
+// const now = new Date('1967-02-17');     //Можем вносить дату с помощью строки например из инпута
+
+// console.log(now);       //В таком формате будет отображаться с 00 времени
+
+// const now = new Date(1967, 2, 17, 21);     //Так передаем вместе с часами
+
+// console.log(now);    
+
+// const now = new Date(996777777777);     //Так можем конвертировать в миллисекунды от 1970-ого года
+
+// console.log(now);   
+
+
+// МЕТОДЫ ДАТ
+
+
+// const now = new Date(); 
+// new Date.parse(2020-11-21);   //Тоже самое если и подставить такую дату просто в нью дате  
+
+// Это методы геттеры (получаем)
+
+// console.log(now.getFullYear());  //Так получаем только год
+// console.log(now.getMonth()); 
+// console.log(now.getDate());
+// console.log(now.getDay());
+
+// console.log(now.getTimezoneOffset());       //Разница между нашим поясом и гринвичем в минутах
+// console.log(now.getTime());     //Так получаем кол-во миллисекунд которое сейчас прошло с 1970-ого года
+
+// Это методы сеттеры (задаем)
+
+// console.log(now.setMonth(12));      //Так получаем в миллисекундах
+// console.log(now);       //Так получаем в дате
+
+// now.setMonth(12);      //Тоже самое
+// console.log(now);       
+
+
+
+
+// ТЕСТИРУЕМ НА СКОРОСТЬ ВЫПОЛНЕНИЯ ЦИКЛА
+
+
+// let start = new Date();
+
+// for(let i = 0; i < 200000000; i++) {
+//     i ** 3;
+// }
+
+// let end = new Date();
+
+// alert(`Цикл отработал за ${end - start} миллисекунд`);
