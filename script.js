@@ -356,45 +356,58 @@
 // };
 
 // Сокращенное написание если только одна строчка
-const double = a => a * 2;
+// const double = a => a * 2;
 
-console.log(double(4)); 
-
-
+// console.log(double(4)); 
 
 
-// **************** Классы ES6 ***************
 
-class Rectangle {
-    constructor(height, width) {
-        this.height = height;
-        this.width = width;
-    }
 
-    calcArea() {
-        return this.height * this.width;
-    }
-}
+// // **************** Классы ES6 ***************
 
-class ColoredRectangleWithText extends Rectangle {      //Extends наследуем хначения другого класса
-    constructor(height, width, text, bgColor) {
-        super(height, width);    //Так получаем свойства класса у которого наследовали
-        this.text = text;
-        this.bgColor = bgColor;
-    }
+// class Rectangle {
+//     constructor(height, width) {
+//         this.height = height;
+//         this.width = width;
+//     }
 
-    showMyProps() {
-        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
-    }
-}
+//     calcArea() {
+//         return this.height * this.width;
+//     }
+// }
 
-const div = new ColoredRectangleWithText(20, 12, 'Hello', 'blue');
+// class ColoredRectangleWithText extends Rectangle {      //Extends наследуем хначения другого класса
+//     constructor(height, width, text, bgColor) {
+//         super(height, width);    //Так получаем свойства класса у которого наследовали
+//         this.text = text;
+//         this.bgColor = bgColor;
+//     }
 
-div.showMyProps();      //Используем изначальные свойства нашего объекта
-console.log(div.calcArea());    //Используем унаследованный метод с новыми значениями
+//     showMyProps() {
+//         console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
+//     }
+// }
+
+// const div = new ColoredRectangleWithText(20, 12, 'Hello', 'blue');
+
+// div.showMyProps();      //Используем изначальные свойства нашего объекта
+// console.log(div.calcArea());    //Используем унаследованный метод с новыми значениями
 
 // const square = new Rectangle(10,10);        //Так создаем новый объект по шаблону класса
 // const long = new Rectangle(10,20); 
 
 // console.log(square.calcArea());
 // console.log(long.calcArea());
+
+
+
+
+
+
+// ************************* REST Elements *********************
+
+const log = function(a, b, ...rest) {       //...это rest оператор который говорит о том что здесь может быть значение, но может и не быть
+    console.log(a, b, rest);
+};
+
+log('Джонни', 55, 67, 'Эвин');      //rest элементы помещаются в массив
