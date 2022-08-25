@@ -250,17 +250,112 @@
 // *************** Функции конструкторы *****************
 
 
-function user (name, id) {
-    this.name = name;
-    this.id = id;
-    this.human = true;
-    this.hello = function() {
-        console.log(`Hello ${this.name}`);
-    };
-}
+// function user (name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log(`Hello ${this.name}`);
+//     };
+// }
 
-const ivan = new user('Ivan', 18);
-const mary = new user('Mary', 33);
+// const ivan = new user('Ivan', 18);
+// const mary = new user('Mary', 33);
 
-console.log(ivan);
-ivan.hello();
+// console.log(ivan);
+// ivan.hello();
+
+
+
+
+// *************** Контекст вызова, this *****************
+
+
+// function showThis() {
+//     console.log(this);
+// }
+
+// showThis();         //Будет равно undifined, но если use strict отключен, то = window
+
+
+// const obj = {
+//     a: 20,
+//     b: 15,
+//     sum: function() {
+//         console.log(this);
+//     }
+// };
+
+// obj.sum();         //Котекст у методов объекта, сам объект
+
+
+// function user (name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function() {
+//         console.log(`Hello ${this.name}`);
+//     };
+// }
+
+// const ivan = new user('Ivan', 18);
+// const mary = new user('Mary', 33);
+
+// console.log(ivan);
+// ivan.hello();
+// // This в конструкторах и классах это новый экземпляр объекта
+
+
+// Передача контекста вызова
+
+// function sayName(surname) {
+// console.log(this);
+// console.log(this.name + surname);
+// }
+
+// const user = {
+//     name: 'Sonya'
+// };
+
+// sayName.call(user, ' Lesheva');     //Вторым элементом передаем аргумент 
+// sayName.apply(user, [' Lesheva']);  //Разница только в написании
+
+
+// function count (num) {
+//     return this * num
+// }
+
+// const double = count.bind(3);    //Здесь присваиваем значения для this создавая новвую функцию
+
+// console.log(double(3));     //Здесь уже передаем значения для аргумента функции (num)
+
+
+// const box = document.querySelector('.box');
+
+// box.addEventListener('click', function() {
+//     console.log(this);      //При использовании обычной анонимной функции контекстом вызова будет сам элемент и это по сути идентично использованию event.target
+                              //Если используем струлочную функции то аргумент вызова потеряется
+// });
+
+
+// const obj = {
+//     a: 5,
+//     sayNumber: function() {
+//         const say = () => {         //Такая стрелочная функция уже будет брать контекст вызова у своего родителя
+//             console.log(this);  
+//         };
+//         say();
+//     }
+// };
+
+// obj.sayNumber();
+
+// // Стандартное написание
+// const double = (a) => {
+//     return a * 2;
+// };
+
+// Сокращенное написание если только одна строчка
+const double = a => a * 2;
+
+console.log(double(4)); 
