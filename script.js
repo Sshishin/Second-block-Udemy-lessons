@@ -201,3 +201,45 @@
 // let end = new Date();
 
 // alert(`Цикл отработал за ${end - start} миллисекунд`);
+
+
+
+
+
+
+
+// ****************** window **************
+
+const box = document.querySelector('.box'),
+      btn = document.querySelector('button');
+
+// Так получаем элемент только с паддингами и без маржинов и за вычетом полосы прокрутки
+// const height = box.clientHeight;
+// const width = box.clientWidth;
+
+// Так получаем элемент еще и с учетом маржинов и полосы прокрутки
+// const height = box.offsetHeight;
+// const width = box.offsetWidth;
+
+// Так получаем полную высоту элемента с учетом скролла
+// const height = box.scrollHeight;
+// const width = box.scrollWidth;
+
+btn.addEventListener('click', () => {
+    box.style.height = box.scrollHeight + 'px';     // То есть при клике на кнопку, у нас раскроется окно
+    console.log(box.scrollTop);     //А так при клике на кнопку мы узнаем сколько пользователь проскроллил от начала окна
+});
+
+console.log(box.getBoundingClientRect());   // Так получае координаты элемента
+console.log(box.getBoundingClientRect().top);   // Так отдельные значения объекта
+
+
+const style = window.getComputedStyle('.box');      //Так получаем стили css только для проверки на соответсвтие
+
+console.log(style.display);     //Так получаем стили из css которые уже для элемента применились
+
+document.documentElement.scrollTop;       //Так можем следить за тем что происходит со страницей, а не с конкретным элементом
+
+window.scrollBy();  //Скролл от текущей позиции
+
+window.scrollBy();  //Скролл от начала страницы
