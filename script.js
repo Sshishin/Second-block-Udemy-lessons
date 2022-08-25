@@ -359,3 +359,42 @@
 const double = a => a * 2;
 
 console.log(double(4)); 
+
+
+
+
+// **************** Классы ES6 ***************
+
+class Rectangle {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+
+    calcArea() {
+        return this.height * this.width;
+    }
+}
+
+class ColoredRectangleWithText extends Rectangle {      //Extends наследуем хначения другого класса
+    constructor(height, width, text, bgColor) {
+        super(height, width);    //Так получаем свойства класса у которого наследовали
+        this.text = text;
+        this.bgColor = bgColor;
+    }
+
+    showMyProps() {
+        console.log(`Текст: ${this.text}, цвет: ${this.bgColor}`);
+    }
+}
+
+const div = new ColoredRectangleWithText(20, 12, 'Hello', 'blue');
+
+div.showMyProps();      //Используем изначальные свойства нашего объекта
+console.log(div.calcArea());    //Используем унаследованный метод с новыми значениями
+
+// const square = new Rectangle(10,10);        //Так создаем новый объект по шаблону класса
+// const long = new Rectangle(10,20); 
+
+// console.log(square.calcArea());
+// console.log(long.calcArea());
