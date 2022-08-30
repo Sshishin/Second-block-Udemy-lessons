@@ -411,3 +411,15 @@ const log = function(a, b, ...rest) {       //...это rest оператор к
 };
 
 log('Джонни', 55, 67, 'Эвин');      //rest элементы помещаются в массив
+
+
+// Перевод в бинарное
+
+// function addBinary(a,b) {
+//  return Number(a + b).toString(2);
+// }
+
+
+//Переворот строки
+
+// const reverseWords = (str) => str.split('').reverse().join('');
